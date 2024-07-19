@@ -33,13 +33,6 @@ public class quiz : MonoBehaviour
 
     IEnumerator StartQuiz()
     {
-
-        while (quizNum < 4) // 설명 텍스트가 더 이상 없을 때까지 반복
-        {
-            setExplainUI();
-            yield return new WaitForSeconds(3f); // 3초 대기
-            quizNum++; // 다음 텍스트로 넘어감
-        }
         yield return new WaitUntil(() => nextStep1); // 사용자가 버튼을 누를 때까지 대기
         // 퀴즈1의 정답 여부를 확인하고 메시지를 출력
         
@@ -51,34 +44,6 @@ public class quiz : MonoBehaviour
             quizScore++;
         }
 
-    }
-    public void setExplainUI()
-    {
-
-        if (quizNum == 0)
-        {
-            uiStr = "백혈구가 되어서 면역반응, 식균작용에 대해서 체험해봤지?";
-            setText(quizText, uiStr);
-        }
-
-        if (quizNum == 1)
-        {
-            uiStr = "그럼 이제 체험한 내용에 대한 퀴즈를 풀어볼거야";
-            setText(quizText, uiStr);
-        }
-
-        if (quizNum == 2)
-        {
-            uiStr = "체험을 집중해서 했다면 다 맞출 수 있는 문제들이니까 잘 풀어봐!";
-            setText(quizText, uiStr);
-        }
-
-        if (quizNum == 3)
-        {
-            uiStr = "Q1. 백혈구는 어디서 생성되나요?";
-            setText(quizText, uiStr);
-            answerPanel.SetActive(true);
-        }
     }
 
     public void answer1()

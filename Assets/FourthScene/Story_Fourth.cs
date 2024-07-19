@@ -10,7 +10,7 @@ public class Story_Fourth : MonoBehaviour
     [SerializeField] private Text txtStory;
     [SerializeField] private Button btnNext;
     [SerializeField] private GameObject shouldInvisible;
-    [SerializeField] private Text Maximum;
+    [SerializeField] private GameObject QuizPanel;
     
     private List<string> story = new List<string>();
     private string txtPath = "Assets/FourthScene/storyText_Fourth.txt";
@@ -19,14 +19,14 @@ public class Story_Fourth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        Maximum.gameObject.SetActive(false);
+        QuizPanel.gameObject.SetActive(false);
         btnNext.onClick.RemoveAllListeners();
         btnNext.onClick.AddListener(checkStory);
         ReadFile(txtPath);
         StartCoroutine(ReadStory());
         Debug.Log("Story Start");
     }
+
     // 텍스트 파일을 파일 위치로 읽어들이기
     private void ReadFile(string path)
     {
@@ -50,6 +50,7 @@ public class Story_Fourth : MonoBehaviour
             Debug.LogError(e.Message);
         }
     }
+
     private IEnumerator ReadStory()
     {
         for(int i=0; i <story.Count; i++)
@@ -63,9 +64,9 @@ public class Story_Fourth : MonoBehaviour
         }
         Debug.Log("Read Story");
         shouldInvisible.SetActive(false);
-        Maximum.gameObject.SetActive(true);
-
+        QuizPanel.gameObject.SetActive(true);
     }
+
     private void checkStory()
     {
         lamdaCondition=true;
