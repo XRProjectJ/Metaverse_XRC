@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using System.Threading;
 using TMPro;
 using UnityEngine;
@@ -8,10 +9,13 @@ using UnityEngine.UI;
 public class EatVirus : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI countingText;
+    [SerializeField] private Material extMaterial;
+    [SerializeField] private GameObject ring;
     [SerializeField] private GameObject belowJaw;
     [SerializeField] private GameObject overJaw;
     [SerializeField] private GameObject belowJaw2;
     [SerializeField] private GameObject overJaw2;
+
     private List<GameObject> eatableVirus = new List<GameObject>();
     private readonly object listLock = new object();
     private int counting = 0;
@@ -52,6 +56,7 @@ public class EatVirus : MonoBehaviour
                 // -> 배열에서 먼저 제거하는 것이 코드의 안정성 측면에서 더 좋다
                 Destroy(obj);
                 count++;
+                ring.GetComponent<Renderer>().material = extMaterial;
                 Debug.Log(count);
             }
             //eatableVirus.Clear();

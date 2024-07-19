@@ -9,6 +9,7 @@ public class Story : MonoBehaviour
 {
     [SerializeField] private Text txtStory;
     [SerializeField] private Button btnNext;
+    [SerializeField] private GameObject spawnVirus;
     [SerializeField] private GameObject shouldInvisible;
     [SerializeField] private Text Maximum;
     
@@ -19,7 +20,7 @@ public class Story : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnVirus.SetActive(false);
         Maximum.gameObject.SetActive(false);
         btnNext.onClick.RemoveAllListeners();
         btnNext.onClick.AddListener(checkStory);
@@ -54,7 +55,20 @@ public class Story : MonoBehaviour
     {
         for(int i=0; i <story.Count; i++)
         {
-            txtStory.text = story[i];
+            string tmp = "";
+            //tmp += story[i] + "\n";
+            int j = i;
+            while (true)
+            {
+                if (i >= story.Count || string.IsNullOrWhiteSpace(story[i]))
+                {
+                    break;
+                }
+                tmp += story[i] + "\n";
+                i++;
+            }
+            Debug.Log(tmp);
+            txtStory.text = tmp;
             // 람다식 기억안나면 유튜브 시청: https://www.youtube.com/watch?v=HNDhlODVV4Q 
             // WaitUntile 은 true 가 될때 코드 실행을 재개
             yield return new WaitUntil(() => { return lamdaCondition; });
@@ -63,6 +77,7 @@ public class Story : MonoBehaviour
         }
         Debug.Log("Read Story");
         shouldInvisible.SetActive(false);
+        spawnVirus.SetActive(true);
         Maximum.gameObject.SetActive(true);
 
     }

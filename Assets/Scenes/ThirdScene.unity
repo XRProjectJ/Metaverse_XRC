@@ -340,6 +340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 495412175}
+  extMaterial: {fileID: 2100000, guid: 520c6f70209a37643b2bda4444434d8a, type: 2}
+  ring: {fileID: 1001196639}
 --- !u!1001 &140818298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -713,7 +715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationPos: {fileID: 1591109197}
   spawnPosCollection: {fileID: 323077728}
-  virus: {fileID: 4681650225623917884, guid: 6b880c475e1518145bf64f2e2a588a60, type: 3}
+  virus: {fileID: 7662646678959171231, guid: f6fdfe88dffe0e549961b537a85c1144, type: 3}
 --- !u!1 &418057078
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,6 +857,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countingText: {fileID: 578429747}
+  extMaterial: {fileID: 2100000, guid: 520c6f70209a37643b2bda4444434d8a, type: 2}
+  ring: {fileID: 1001196639}
   belowJaw: {fileID: 5786141886772184750}
   overJaw: {fileID: 1926146776}
   belowJaw2: {fileID: 1243012179}
@@ -1557,8 +1561,8 @@ Transform:
   m_GameObject: {fileID: 988244670}
   serializedVersion: 2
   m_LocalRotation: {x: 1.1102232e-17, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 5}
-  m_LocalScale: {x: 1, y: 20, z: 1}
+  m_LocalPosition: {x: -4.5, y: 0, z: 4.5}
+  m_LocalScale: {x: 0.9, y: 20, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1319517917}
@@ -6035,6 +6039,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eatVirus: {fileID: 495412177}
+  extMaterial: {fileID: 2100000, guid: 520c6f70209a37643b2bda4444434d8a, type: 2}
+  ring: {fileID: 1001196639}
 --- !u!1 &1001196639
 GameObject:
   m_ObjectHideFlags: 0
@@ -6050,7 +6056,7 @@ GameObject:
   - component: {fileID: 1001196642}
   - component: {fileID: 1001196641}
   m_Layer: 0
-  m_Name: Pipe
+  m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6121,7 +6127,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 415332d106d1daf4282b2bff047cb225, type: 2}
+  - {fileID: 2100000, guid: 520c6f70209a37643b2bda4444434d8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10564,8 +10570,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 0}
-  m_SizeDelta: {x: 700, y: 100}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 600, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1017157674
 CanvasRenderer:
@@ -15713,6 +15719,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eatVirus: {fileID: 495412177}
+  entMaterial: {fileID: 2100000, guid: a21492bc534ccfc4d9c83bc5a2568caf, type: 2}
+  ring: {fileID: 1001196639}
 --- !u!1 &1591109196
 GameObject:
   m_ObjectHideFlags: 0

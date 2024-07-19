@@ -30,7 +30,8 @@ public class SpawnVirus : MonoBehaviour
         Vector3 createPos = spawnPos[idx].transform.position;
         GameObject obj = Instantiate(virus);
         obj.transform.position = createPos;
-        float speed = Random.Range(1000.0f, 1500.0f);
+        obj.transform.LookAt(destinationPos);
+        float speed = Random.Range(500.0f, 750.0f);
         obj.GetComponent<Rigidbody>().AddForce(spawnPos[idx].transform.forward*speed);
     }
     // Update is called once per frame
