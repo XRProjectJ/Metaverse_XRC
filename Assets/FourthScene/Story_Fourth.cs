@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class Story : MonoBehaviour
+public class Story_Fourth : MonoBehaviour
 {
     [SerializeField] private Text txtStory;
     [SerializeField] private Button btnNext;
@@ -13,7 +13,7 @@ public class Story : MonoBehaviour
     [SerializeField] private Text Maximum;
     
     private List<string> story = new List<string>();
-    private string txtPath = "Assets/ThirdScene/storyText.txt";
+    private string txtPath = "Assets/FourthScene/storyText_Fourth.txt";
     private bool lamdaCondition = false;
 
     // Start is called before the first frame update
