@@ -11,8 +11,10 @@ public class Story : MonoBehaviour
     [SerializeField] private Button btnNext;
     [SerializeField] private GameObject spawnVirus;
     [SerializeField] private GameObject shouldInvisible;
-    [SerializeField] private Text Maximum;
-    
+    [SerializeField] private Text maximum;
+    [SerializeField] private Image picture;
+    [SerializeField] private Sprite[] images;
+
     private List<string> story = new List<string>();
     private string txtPath = "Assets/ThirdScene/storyText.txt";
     private bool lamdaCondition = false;
@@ -21,7 +23,8 @@ public class Story : MonoBehaviour
     void Start()
     {
         spawnVirus.SetActive(false);
-        Maximum.gameObject.SetActive(false);
+        maximum.gameObject.SetActive(false);
+        picture.gameObject.SetActive(false);
         btnNext.onClick.RemoveAllListeners();
         btnNext.onClick.AddListener(checkStory);
         ReadFile(txtPath);
@@ -53,7 +56,8 @@ public class Story : MonoBehaviour
     }
     private IEnumerator ReadStory()
     {
-        for(int i=0; i <story.Count; i++)
+        int imgIdx = 0;
+        for (int i=0; i <story.Count; i++)
         {
             string tmp = "";
             //tmp += story[i] + "\n";
@@ -64,21 +68,30 @@ public class Story : MonoBehaviour
                 {
                     break;
                 }
-                tmp += story[i] + "\n";
+                if (story[i][story[i].Length-1] == '@')
+                {
+                    picture.gameObject.SetActive(true);
+                    picture.sprite = images[imgIdx++];
+                    Debug.Log("imagesIdx = " + imgIdx);
+                }
+                tmp += story[i].TrimEnd('@') + "\n";
                 i++;
             }
             Debug.Log(tmp);
             txtStory.text = tmp;
+            
+            
             // 람다식 기억안나면 유튜브 시청: https://www.youtube.com/watch?v=HNDhlODVV4Q 
             // WaitUntile 은 true 가 될때 코드 실행을 재개
             yield return new WaitUntil(() => { return lamdaCondition; });
             lamdaCondition = false;
-            
+            picture.gameObject.SetActive(false);
+
         }
         Debug.Log("Read Story");
         shouldInvisible.SetActive(false);
         spawnVirus.SetActive(true);
-        Maximum.gameObject.SetActive(true);
+        maximum.gameObject.SetActive(true);
 
     }
     private void checkStory()
