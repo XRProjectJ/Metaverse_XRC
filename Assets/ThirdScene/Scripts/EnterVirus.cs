@@ -5,15 +5,14 @@ using UnityEngine;
 public class EnterVirus : MonoBehaviour
 {
     [SerializeField] private EatVirus eatVirus;
-    [SerializeField] private Material entMaterial;
-    [SerializeField] private GameObject ring;
+    [SerializeField] private RingColorChange ring;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag.Equals("Virus"))
         {
             eatVirus.AddEatableVirus(other.gameObject);
-            ring.GetComponent<Renderer>().material = entMaterial;
+            ring.ToEnterColor();
         }
     }
     // Update is called once per frame

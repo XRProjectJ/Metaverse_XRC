@@ -5,8 +5,7 @@ using UnityEngine;
 public class ExitVirus : MonoBehaviour
 {
     [SerializeField] private EatVirus eatVirus;
-    [SerializeField] private Material extMaterial;
-    [SerializeField] private GameObject ring;
+    [SerializeField] private RingColorChange ring;
 
 
     private void OnTriggerEnter(Collider other)
@@ -14,7 +13,7 @@ public class ExitVirus : MonoBehaviour
         if (other.tag.Equals("Virus"))
         {
             eatVirus.RemoveEatableVirus(other.gameObject);
-            ring.GetComponent<Renderer>().material = extMaterial;
+            ring.ToExitColor();
         }
     }
     // Update is called once per frame

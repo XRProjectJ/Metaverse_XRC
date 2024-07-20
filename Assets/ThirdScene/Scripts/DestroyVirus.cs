@@ -5,8 +5,7 @@ using UnityEngine;
 public class DestroyVirus : MonoBehaviour
 {
     [SerializeField] private Camera cam;
-    [SerializeField] private Material extMaterial;
-    [SerializeField] private GameObject ring;
+    [SerializeField] private RingColorChange ring;
 
     private float duration = 0.2f;
     private float magnitude = 1.5f;
@@ -17,7 +16,7 @@ public class DestroyVirus : MonoBehaviour
             Destroy(other.gameObject);
             Quaternion origin = cam.transform.rotation;
             StartCoroutine(Shake(origin));
-            ring.GetComponent<Renderer>().material = extMaterial;
+            ring.ToExitColor();
             //Hit();
         }
         
