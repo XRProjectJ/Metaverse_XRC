@@ -248,12 +248,10 @@ MonoBehaviour:
   maximum: {fileID: 1140061259}
   picture: {fileID: 1724215699}
   images:
-  - {fileID: 21300000, guid: d2d0f40740379ff40b0e55d0c4ccd1ef, type: 3}
-  - {fileID: 21300000, guid: d6039116bcf9ba9479333ae82b82f6ad, type: 3}
-  - {fileID: 21300000, guid: 14a1d3ff2eb1442449d517effe7205b8, type: 3}
-  - {fileID: 21300000, guid: 96215b8894a566a47b48dcadda7d2984, type: 3}
-  - {fileID: 21300000, guid: 30ec55f63370d1a41a071b76c5f8cb2a, type: 3}
-  - {fileID: 21300000, guid: c3b70091f62e4c44d944b9fe922c9a44, type: 3}
+  - {fileID: 21300000, guid: 268578732fe9cbd42aa773cd4d9d9ee7, type: 3}
+  - {fileID: 21300000, guid: 79c2c251a1fcf1c4d97a6cc384149fd6, type: 3}
+  - {fileID: 21300000, guid: 1dd2d9dd0fe212c45bcbaabcf363b00b, type: 3}
+  - {fileID: 21300000, guid: fa3a57702613bc04781d71c8d087252d, type: 3}
 --- !u!1 &105896514
 GameObject:
   m_ObjectHideFlags: 0
