@@ -36,6 +36,11 @@ public class EatVirus : MonoBehaviour
         {
             EatingVirus();
         }
+        if (OVRInput.GetDown(OVRInput.Button.One))
+        {
+            EatingVirus();
+        }
+
     }
     private void EatingVirus()
     {
