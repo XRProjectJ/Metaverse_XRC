@@ -12,8 +12,6 @@ public class EatVirus : MonoBehaviour
     [SerializeField] private RingColorChange ring;
     [SerializeField] private GameObject belowJaw;
     [SerializeField] private GameObject overJaw;
-    [SerializeField] private GameObject belowJaw2;
-    [SerializeField] private GameObject overJaw2;
 
     private List<GameObject> eatableVirus = new List<GameObject>();
     private readonly object listLock = new object();
@@ -83,17 +81,13 @@ public class EatVirus : MonoBehaviour
     }
     private void CloseMouth()
     {
-        overJaw.transform.Translate(new Vector3(0, 0.3f, 0), Space.Self);
-        belowJaw.transform.Translate(new Vector3(0, 0.3f, 0), Space.Self);
-        overJaw2.transform.Translate(new Vector3(0, 0.4f, 0), Space.Self);
-        belowJaw2.transform.Translate(new Vector3(0, 0.4f, 0), Space.Self);
+        overJaw.transform.Translate(new Vector3(0, 0.4f, 0), Space.Self);
+        belowJaw.transform.Translate(new Vector3(0, 0.4f, 0), Space.Self);
     }
     private void OpenMouth()
     {
-        overJaw.transform.Translate(new Vector3(0, -0.3f, 0), Space.Self);
-        belowJaw.transform.Translate(new Vector3(0, -0.3f, 0), Space.Self);
-        overJaw2.transform.Translate(new Vector3(0, -0.4f, 0), Space.Self);
-        belowJaw2.transform.Translate(new Vector3(0, -0.4f, 0), Space.Self);
+        overJaw.transform.Translate(new Vector3(0, -0.4f, 0), Space.Self);
+        belowJaw.transform.Translate(new Vector3(0, -0.4f, 0), Space.Self);
     }
     private IEnumerator Bite()
     {
