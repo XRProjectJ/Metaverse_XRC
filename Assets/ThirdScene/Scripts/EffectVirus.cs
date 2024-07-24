@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EffectVirus : MonoBehaviour
 {
-    [SerializeField] private GameObject deadEffect;
     private float dtime = 0;
     private int[] directions = new int[2];
     private int direction;

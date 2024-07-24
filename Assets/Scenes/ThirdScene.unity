@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0570253, g: 0.016472798, b: 0.021975756, a: 1}
+  m_IndirectSpecularColor: {r: 0.05724723, g: 0.016530195, b: 0.021963079, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3242,6 +3242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countingText: {fileID: 578429747}
+  deadEffect: {fileID: 0}
   ring: {fileID: 1001196646}
   belowJaw: {fileID: 1243012179}
   overJaw: {fileID: 1144288324}
@@ -27686,6 +27687,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countingText: {fileID: 578429747}
+  deadEffect: {fileID: 5476018216238844780, guid: fb923b2aba5028c47be0f44d89246352,
+    type: 3}
   ring: {fileID: 1001196646}
   belowJaw: {fileID: 272155754}
   overJaw: {fileID: 570869528}

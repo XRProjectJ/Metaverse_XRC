@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class EatVirus : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI countingText;
+    [SerializeField] private GameObject deadEffect;
     [SerializeField] private RingColorChange ring;
     [SerializeField] private GameObject belowJaw;
     [SerializeField] private GameObject overJaw;
@@ -53,10 +54,14 @@ public class EatVirus : MonoBehaviour
             for (int i = eatableVirus.Count-1; i >= 0; i--)
             {
                 GameObject obj = eatableVirus[i];
+                GameObject particle = Instantiate(deadEffect);
+                particle.transform.position = obj.transform.position;
+                Destroy(particle, 0.5f);
                 eatableVirus.RemoveAt(i);
                 // Destroy는 즉시 파괴시키는 것이 아닌 다음 프레임에 파괴시킬 것을 예약함
                 // -> 배열에서 먼저 제거하는 것이 코드의 안정성 측면에서 더 좋다
                 Destroy(obj);
+                
                 count++;
                 ring.ToExitColor();
                 Debug.Log(count);
