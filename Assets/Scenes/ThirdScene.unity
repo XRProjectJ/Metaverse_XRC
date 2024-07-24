@@ -415,7 +415,6 @@ GameObject:
   - component: {fileID: 87525558}
   - component: {fileID: 87525560}
   - component: {fileID: 87525561}
-  - component: {fileID: 87525562}
   - component: {fileID: 87525563}
   m_Layer: 5
   m_Name: Canvas
@@ -572,23 +571,6 @@ MonoBehaviour:
   _selectSurface: {fileID: 1667878314}
   _movementProvider: {fileID: 0}
   _tiebreakerScore: 0
---- !u!114 &87525562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87525553}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5032d5baa715d5a44a1c6df19d3837d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pointable: {fileID: 87525560}
-  _radius: 0.01
-  _hoverColor: {r: 0, g: 0, b: 1, a: 1}
-  _selectColor: {r: 0, g: 1, b: 0, a: 1}
-  _drawAxes: 1
 --- !u!114 &87525563
 MonoBehaviour:
   m_ObjectHideFlags: 0
