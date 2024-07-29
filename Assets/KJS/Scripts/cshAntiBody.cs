@@ -11,6 +11,9 @@ public class cshAntiBody : MonoBehaviour
     private cshVirusMove virusMove;
     private float OriginSpeed;
 
+    public GameObject originModel;
+    public GameObject targetModel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +41,9 @@ public class cshAntiBody : MonoBehaviour
         if (activeAntibodies >= HPAntibody)
         {
             virusMove.speed = 0;
-            Destroy(gameObject, 3f);
+            originModel.SetActive(false);
+            targetModel.SetActive(true);
+            //Destroy(gameObject, 3f);
         }
     }
 
@@ -50,8 +55,13 @@ public class cshAntiBody : MonoBehaviour
             for (int i = 0; i < 2 && inactiveAntibodies.Count > 0; i++)
             {
                 int randomIndex = Random.Range(0, inactiveAntibodies.Count);
-                inactiveAntibodies[randomIndex].SetActive(true);
-                inactiveAntibodies.RemoveAt(randomIndex);
+                // 50% 확률로 작동하도록 수정
+                if (Random.value < 0.4f)
+                {
+                    Debug.Log(Random.value);
+                    inactiveAntibodies[randomIndex].SetActive(true);
+                    inactiveAntibodies.RemoveAt(randomIndex);
+                }
             }
         }
     }

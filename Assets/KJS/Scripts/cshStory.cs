@@ -14,6 +14,11 @@ public class cshStory : MonoBehaviour
     [SerializeField] private Image picture;
     [SerializeField] private Sprite[] images;
 
+    public GameObject antiSpere;
+    public GameObject GameManager;
+    public OVRPlayerController playerController;
+    
+
     private List<string> story = new List<string>();
     private string txtPath = "Assets/KJS/AntibodyText.txt";
     private bool lamdaCondition = false;
@@ -71,7 +76,16 @@ public class cshStory : MonoBehaviour
                     picture.sprite = images[imgIdx++];
                     Debug.Log("imagesIdx = " + imgIdx);
                 }
-                tmp += story[i].TrimEnd('@') + "\n";
+                if (story[i][story[i].Length - 1] == '#')
+                {
+                    antiSpere.SetActive(true);
+                }
+                if (story[i][story[i].Length - 1] == '$')
+                {
+                    GameManager.SetActive(true);
+                    playerController.enabled = true;
+                }
+                tmp += story[i].TrimEnd('@').TrimEnd('#').TrimEnd('$') + "\n";
                 i++;
             }
             Debug.Log(tmp);

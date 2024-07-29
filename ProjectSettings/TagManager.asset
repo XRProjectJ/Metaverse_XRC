@@ -7,6 +7,7 @@ TagManager:
   - Virus_A
   - Virus
   - Antibody_A
+  - Plane
   layers:
   - Default
   - TransparentFX

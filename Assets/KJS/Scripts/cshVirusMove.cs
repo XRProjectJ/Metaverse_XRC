@@ -5,7 +5,7 @@ using UnityEngine;
 public class cshVirusMove : MonoBehaviour
 {
     public float speed = 3.0f;
-    public GameObject plane;
+    private GameObject plane;
     public float minY = 0.01f;
     public float maxY = 1.0f;
     public float rotationSpeed = 2.0f;
@@ -17,6 +17,7 @@ public class cshVirusMove : MonoBehaviour
 
     private void Start()
     {
+        plane = GameObject.Find("Plane");
         targetPosition = GetRandomPositionOnPlane();
     }
 
@@ -45,8 +46,8 @@ public class cshVirusMove : MonoBehaviour
 
     private Vector3 GetRandomPositionOnPlane()
     {
-        float planeWidth = plane.transform.localScale.x*10;
-        float planeLength = plane.transform.localScale.z*10;
+        float planeWidth = (plane.transform.localScale.x * 10) - 1;
+        float planeLength = (plane.transform.localScale.z * 10) - 1;
 
         float randomX = Random.Range(-planeWidth / 2, planeWidth / 2);
         float randomZ = Random.Range(-planeLength / 2, planeLength / 2);
