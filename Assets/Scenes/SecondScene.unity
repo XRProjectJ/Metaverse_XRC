@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05724723, g: 0.016530195, b: 0.021963079, a: 1}
+  m_IndirectSpecularColor: {r: 0.0570253, g: 0.016472798, b: 0.021975756, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3511,53 +3511,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428123808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &490880894 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5996517455393898657, guid: 180516d5e44a88e4f970012ea322047d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1910654179873016195}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &490880897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490880894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40ac056729497894fa4de8b15d4513c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpeareTag: Virus_A
-  AntibodyTag: Antibody_A
---- !u!54 &490880900
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490880894}
-  serializedVersion: 4
-  m_Mass: 2000
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1 &492969931
 GameObject:
   m_ObjectHideFlags: 0
@@ -6096,7 +6049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 1206184139}
-  _ovrControllerHelper: {fileID: 0}
+  _ovrControllerHelper: {fileID: 801075857}
 --- !u!1 &842674946
 GameObject:
   m_ObjectHideFlags: 0
@@ -6332,7 +6285,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 2, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -12252,7 +12205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 742242439}
-  _ovrControllerHelper: {fileID: 0}
+  _ovrControllerHelper: {fileID: 122440373}
 --- !u!1 &1891054169
 GameObject:
   m_ObjectHideFlags: 0
@@ -13754,15 +13707,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2028750789015954991, guid: 180516d5e44a88e4f970012ea322047d,
+        type: 3}
+      propertyPath: plane
+      value: 
+      objectReference: {fileID: 879710502}
     - target: {fileID: 5996517455393898657, guid: 180516d5e44a88e4f970012ea322047d,
         type: 3}
       propertyPath: m_Name
       value: Virus_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5996517455393898657, guid: 180516d5e44a88e4f970012ea322047d,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7538605689859306286, guid: 180516d5e44a88e4f970012ea322047d,
         type: 3}
@@ -13772,7 +13725,7 @@ PrefabInstance:
     - target: {fileID: 7538605689859306286, guid: 180516d5e44a88e4f970012ea322047d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.89
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7538605689859306286, guid: 180516d5e44a88e4f970012ea322047d,
         type: 3}
@@ -13782,7 +13735,7 @@ PrefabInstance:
     - target: {fileID: 7538605689859306286, guid: 180516d5e44a88e4f970012ea322047d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7538605689859306286, guid: 180516d5e44a88e4f970012ea322047d,
         type: 3}
@@ -13792,7 +13745,7 @@ PrefabInstance:
     - target: {fileID: 7538605689859306286, guid: 180516d5e44a88e4f970012ea322047d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7538605689859306286, guid: 180516d5e44a88e4f970012ea322047d,
         type: 3}
@@ -13807,7 +13760,7 @@ PrefabInstance:
     - target: {fileID: 7538605689859306286, guid: 180516d5e44a88e4f970012ea322047d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 7538605689859306286, guid: 180516d5e44a88e4f970012ea322047d,
         type: 3}
@@ -13817,15 +13770,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5996517455393898657, guid: 180516d5e44a88e4f970012ea322047d,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 490880897}
-    - targetCorrespondingSourceObject: {fileID: 5996517455393898657, guid: 180516d5e44a88e4f970012ea322047d,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 490880900}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 180516d5e44a88e4f970012ea322047d, type: 3}
 --- !u!1001 &5142248381210643596
 PrefabInstance:
