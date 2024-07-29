@@ -17,7 +17,29 @@ public class Story : MonoBehaviour
 
     private List<string> story = new List<string>();
     private string txtPath = "Assets/ThirdScene/storyText.txt";
+    private string finalTxtPath = "Assets/ThirdScene/finalStoryText.txt";
     private bool lamdaCondition = false;
+    private bool finalAchievement = false;
+
+    public bool finalArrive
+    {
+        get
+        {
+            return finalAchievement;
+        }
+        set
+        {
+            finalAchievement = value;
+            if(finalAchievement == true)
+            {
+                shouldInvisible.SetActive(true);
+                spawnVirus.SetActive(false);
+                maximum.gameObject.SetActive(false);
+                ReadFile(finalTxtPath);
+                StartCoroutine(ReadStory(false));
+            }
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +50,8 @@ public class Story : MonoBehaviour
         btnNext.onClick.RemoveAllListeners();
         btnNext.onClick.AddListener(checkStory);
         ReadFile(txtPath);
-        StartCoroutine(ReadStory());
+        StartCoroutine(ReadStory(true));
+        
         Debug.Log("Story Start");
     }
     // 텍스트 파일을 파일 위치로 읽어들이기
@@ -54,7 +77,7 @@ public class Story : MonoBehaviour
             Debug.LogError(e.Message);
         }
     }
-    private IEnumerator ReadStory()
+    private IEnumerator ReadStory(bool first)
     {
         int imgIdx = 0;
         for (int i=0; i <story.Count; i++)
@@ -85,14 +108,18 @@ public class Story : MonoBehaviour
             // WaitUntile 은 true 가 될때 코드 실행을 재개
             yield return new WaitUntil(() => { return lamdaCondition; });
             lamdaCondition = false;
-            picture.gameObject.SetActive(false);
-
+            if (first)
+            {
+                picture.gameObject.SetActive(false);
+                shouldInvisible.SetActive(false);
+                spawnVirus.SetActive(true);
+                maximum.gameObject.SetActive(true);
+            }
+            
         }
         Debug.Log("Read Story");
-        shouldInvisible.SetActive(false);
-        spawnVirus.SetActive(true);
-        maximum.gameObject.SetActive(true);
-
+        
+        story.Clear();
     }
     private void checkStory()
     {

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 665769162471070134}
   - component: {fileID: 2121775234262708875}
   - component: {fileID: 1792772516703796569}
+  - component: {fileID: 2511469253144769799}
+  - component: {fileID: -8998366209881734575}
   m_Layer: 0
   m_Name: RedBloodCell_geo
   m_TagString: Untagged
@@ -28,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
   m_LocalPosition: {x: 0, y: 8, z: 42.122}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,3 +85,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2511469253144769799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5573761742542868777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f7240250a83c149a6c2901115acd77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8998366209881734575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5573761742542868777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1ccd41922da424f9619c35482bad8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

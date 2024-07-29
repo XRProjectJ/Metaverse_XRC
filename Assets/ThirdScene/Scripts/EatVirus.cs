@@ -13,6 +13,8 @@ public class EatVirus : MonoBehaviour
     [SerializeField] private RingColorChange ring;
     [SerializeField] private GameObject belowJaw;
     [SerializeField] private GameObject overJaw;
+    [SerializeField] private GameObject spawnVirus;
+    [SerializeField] private GameObject Canvas;
 
     private List<GameObject> eatableVirus = new List<GameObject>();
     private readonly object listLock = new object();
@@ -27,6 +29,11 @@ public class EatVirus : MonoBehaviour
         {
             counting = value;
             countingText.text = counting.ToString();
+            if(counting >= 20)
+            {
+                spawnVirus.SetActive(false);
+                Canvas.GetComponent<Story>().finalArrive = true;
+            }
         }
     }
 
