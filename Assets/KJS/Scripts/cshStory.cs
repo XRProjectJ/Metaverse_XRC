@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -17,10 +19,9 @@ public class cshStory : MonoBehaviour
     public GameObject antiSpere;
     public GameObject GameManager;
     public OVRPlayerController playerController;
-    
 
     private List<string> story = new List<string>();
-    private string txtPath = "Assets/KJS/AntibodyText.txt";
+    public string txtPath = "Assets/KJS/AntibodyText.txt";
     private bool lamdaCondition = false;
 
     // Start is called before the first frame update
@@ -85,7 +86,16 @@ public class cshStory : MonoBehaviour
                     GameManager.SetActive(true);
                     playerController.enabled = true;
                 }
-                tmp += story[i].TrimEnd('@').TrimEnd('#').TrimEnd('$') + "\n";
+                if (story[i][story[i].Length - 1] == '&')
+                {
+                    antiSpere.SetActive(false);
+                    playerController.enabled = false;
+                }
+                if (story[i][story[i].Length - 1] == '%')
+                {
+                    SceneManager.LoadScene("ThirdScene");
+                }
+                tmp += story[i].TrimEnd('@').TrimEnd('#').TrimEnd('$').TrimEnd('&').TrimEnd('%') + "\n";
                 i++;
             }
             Debug.Log(tmp);

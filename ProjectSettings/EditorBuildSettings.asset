@@ -23,6 +23,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Quiz.unity
     guid: d91d724aa23781c4b84ab9cb7df4a12a
+  - enabled: 1
+    path: Assets/Scenes/SecondScene.unity
+    guid: 4c4d689f34a2f6945927098b4727dbb4
+  - enabled: 1
+    path: Assets/Scenes/ThirdScene.unity
+    guid: d3ca76eda0d8bb64ba1b9093d0c88c43
+  - enabled: 1
+    path: Assets/Scenes/FirstScene.unity
+    guid: 81826cd6e2ef8d841b7b871fb609d1c8
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 68bd3f60d1cde864e9658e803c96cecc,
       type: 2}

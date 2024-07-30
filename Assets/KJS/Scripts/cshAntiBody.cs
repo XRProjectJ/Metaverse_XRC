@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class cshAntiBody : MonoBehaviour
@@ -14,9 +15,11 @@ public class cshAntiBody : MonoBehaviour
     public GameObject originModel;
     public GameObject targetModel;
 
+
     // Start is called before the first frame update
     void Start()
     {
+
         antibodies = new List<GameObject>();
         foreach (Transform child in transform)
         {
@@ -43,6 +46,7 @@ public class cshAntiBody : MonoBehaviour
             virusMove.speed = 0;
             originModel.SetActive(false);
             targetModel.SetActive(true);
+            gameObject.tag = "SadVirus";
             //Destroy(gameObject, 3f);
         }
     }

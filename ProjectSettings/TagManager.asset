@@ -8,6 +8,7 @@ TagManager:
   - Virus
   - Antibody_A
   - Plane
+  - SadVirus
   layers:
   - Default
   - TransparentFX
