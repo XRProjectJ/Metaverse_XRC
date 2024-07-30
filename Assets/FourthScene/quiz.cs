@@ -189,15 +189,15 @@ public class quiz : MonoBehaviour
 
         if (quizScore >= quizList.Count * 0.8f)
         {
-            quizText.text = $"훌륭해요! 이번 수업 주제인 백혈구에 대해서 잘 이해했어요!";
+            quizText.text = $"훌륭해! 이번 수업 주제인 백혈구에 대해서 완벽히 잘 이해했어!";
         }
         else if (quizScore >= quizList.Count * 0.5f)
         {
-            quizText.text = $"잘했어요!\n 틀린 문제에 대해서 복습하면서 완벽히 이해해보길 추천해요.";
+            quizText.text = $"잘했어!\n 틀린 문제에 대해서 복습하면서 완벽히 이해해보길 추천해.";
         }
         else
         {
-            quizText.text = $"다음에 더 잘할 수 있어요!\n 프로그램을 다시 실행하면서 천천히 학습해봐요.";
+            quizText.text = $"다음에 더 잘할 수 있을거야\n 프로그램을 다시 실행하면서 천천히 학습해보자.";
         }
 
 
