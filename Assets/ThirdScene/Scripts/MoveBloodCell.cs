@@ -15,6 +15,6 @@ public class MoveBloodCell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.transform.Translate(new Vector3(0, 0, Random.Range(100.0f, 200.0f)*Time.deltaTime), Space.World);
+        this.gameObject.transform.Translate(new Vector3(0, 0, Random.Range(-100.0f, -200.0f)*Time.deltaTime), Space.World);
     }
 }

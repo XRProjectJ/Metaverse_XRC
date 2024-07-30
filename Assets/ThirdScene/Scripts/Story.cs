@@ -11,6 +11,7 @@ public class Story : MonoBehaviour
     [SerializeField] private Button btnNext;
     [SerializeField] private GameObject spawnVirus;
     [SerializeField] private GameObject shouldInvisible;
+    [SerializeField] private GameObject finalText;
     [SerializeField] private Text maximum;
     [SerializeField] private Image picture;
     [SerializeField] private Sprite[] images;
@@ -32,11 +33,12 @@ public class Story : MonoBehaviour
             finalAchievement = value;
             if(finalAchievement == true)
             {
-                shouldInvisible.SetActive(true);
-                spawnVirus.SetActive(false);
+                shouldInvisible.SetActive(false);
+                finalText.SetActive(true);
+/*                spawnVirus.SetActive(false);
                 maximum.gameObject.SetActive(false);
                 ReadFile(finalTxtPath);
-                StartCoroutine(ReadStory(false));
+                StartCoroutine(ReadStory(false));*/
             }
         }
     }
