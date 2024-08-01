@@ -23,6 +23,8 @@ public class quiz : MonoBehaviour
 
     public Button[] answerButtons; // 정답 버튼들
 
+    public GameObject FinalUI;
+
 
     [System.Serializable]
     public class Question
@@ -42,6 +44,7 @@ public class quiz : MonoBehaviour
         StartCoroutine(StartQuiz()); // 대화 시작 코루틴 호출
         IncorrectORCorrectPanel.SetActive(false);
         answerPanel.SetActive(true);
+        FinalUI.SetActive(false);
         foreach (Button btn in answerButtons)
         {
             btn.onClick.AddListener(() => OnAnswerButtonClicked(btn));
@@ -197,7 +200,8 @@ public class quiz : MonoBehaviour
         }
         else
         {
-            quizText.text = $"다음에 더 잘할 수 있을거야\n 프로그램을 다시 실행하면서 천천히 학습해보자.";
+            quizText.text = $"다음에 더 잘할 수 있을거야\n 프로그램을 다시 실행하면서 천천히 학습해보자.\n 아래 버튼을 누르면 다시 시작할 수 있어.";
+            FinalUI.SetActive(true);
         }
 
 
