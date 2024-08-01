@@ -3894,7 +3894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.23529413, g: 0.43137258, b: 0.23529413, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -17994,7 +17994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -18533,10 +18533,10 @@ GameObject:
   - component: {fileID: 2059768812}
   - component: {fileID: 2059768811}
   - component: {fileID: 2059768810}
-  - component: {fileID: 2059768809}
   - component: {fileID: 2059768808}
   - component: {fileID: 2059768807}
   - component: {fileID: 2059768806}
+  - component: {fileID: 2059768813}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -18640,30 +18640,6 @@ MonoBehaviour:
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
   _canvas: {fileID: 2059768812}
---- !u!114 &2059768809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059768804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ce269deba6e3a047bc9cc343299486d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  txtStory: {fileID: 1939008650}
-  btnNext: {fileID: 1899341438}
-  spawnVirus: {fileID: 0}
-  shouldInvisible: {fileID: 1108185697}
-  finalText: {fileID: 1595279792}
-  maximum: {fileID: 0}
-  picture: {fileID: 2086130450}
-  images:
-  - {fileID: 21300000, guid: 268578732fe9cbd42aa773cd4d9d9ee7, type: 3}
-  - {fileID: 21300000, guid: 79c2c251a1fcf1c4d97a6cc384149fd6, type: 3}
-  - {fileID: 21300000, guid: 1dd2d9dd0fe212c45bcbaabcf363b00b, type: 3}
-  - {fileID: 21300000, guid: fa3a57702613bc04781d71c8d087252d, type: 3}
 --- !u!114 &2059768810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18727,6 +18703,31 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2059768813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059768804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f3c9fc764e8be4196d327f70b770e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtStory: {fileID: 1939008650}
+  btnNext: {fileID: 1899341438}
+  shouldInvisible: {fileID: 0}
+  picture: {fileID: 2086130450}
+  images:
+  - {fileID: 21300000, guid: 0b957fadadc78ab4593fc16cdfb20faa, type: 3}
+  - {fileID: 21300000, guid: a322b353d371a784ba373bef7b8f336a, type: 3}
+  - {fileID: 21300000, guid: 96215b8894a566a47b48dcadda7d2984, type: 3}
+  - {fileID: 21300000, guid: c3b70091f62e4c44d944b9fe922c9a44, type: 3}
+  - {fileID: 21300000, guid: 30ec55f63370d1a41a071b76c5f8cb2a, type: 3}
+  - {fileID: 21300000, guid: d6039116bcf9ba9479333ae82b82f6ad, type: 3}
+  - {fileID: 21300000, guid: d2d0f40740379ff40b0e55d0c4ccd1ef, type: 3}
+  - {fileID: 21300000, guid: 14a1d3ff2eb1442449d517effe7205b8, type: 3}
 --- !u!1 &2066416804
 GameObject:
   m_ObjectHideFlags: 0
@@ -18839,7 +18840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2627451, g: 0.4431373, b: 0.26666668, a: 1}
+  m_Color: {r: 0.25490198, g: 0.43921572, b: 0.25882354, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
