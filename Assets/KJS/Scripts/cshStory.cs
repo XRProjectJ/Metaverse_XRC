@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,6 +19,8 @@ public class cshStory : MonoBehaviour
 
     public GameObject antiSpere;
     public GameObject GameManager;
+    public GameObject controllerModel;
+    public GameObject rayModel;
     public OVRPlayerController playerController;
 
     private List<string> story = new List<string>();
@@ -80,16 +83,20 @@ public class cshStory : MonoBehaviour
                 if (story[i][story[i].Length - 1] == '#')
                 {
                     antiSpere.SetActive(true);
+                    controllerModel.SetActive(false);
                 }
                 if (story[i][story[i].Length - 1] == '$')
                 {
                     GameManager.SetActive(true);
                     playerController.enabled = true;
+                    goto ExitLoops;
                 }
                 if (story[i][story[i].Length - 1] == '&')
                 {
                     antiSpere.SetActive(false);
                     playerController.enabled = false;
+                    controllerModel.SetActive(true);
+                    rayModel.SetActive(true);
                 }
                 if (story[i][story[i].Length - 1] == '%')
                 {
@@ -109,6 +116,10 @@ public class cshStory : MonoBehaviour
             picture.gameObject.SetActive(false);
 
         }
+
+        ExitLoops:
+        Debug.Log("Exited both loops");
+
         Debug.Log("Read Story");
         shouldInvisible.SetActive(false);
 

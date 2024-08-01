@@ -110,18 +110,19 @@ public class Story : MonoBehaviour
             // WaitUntile 은 true 가 될때 코드 실행을 재개
             yield return new WaitUntil(() => { return lamdaCondition; });
             lamdaCondition = false;
-            if (first)
-            {
-                picture.gameObject.SetActive(false);
-                shouldInvisible.SetActive(false);
-                spawnVirus.SetActive(true);
-                maximum.gameObject.SetActive(true);
-            }
+
             
         }
         Debug.Log("Read Story");
         
         story.Clear();
+        if (first)
+        {
+            picture.gameObject.SetActive(false);
+            shouldInvisible.SetActive(false);
+            spawnVirus.SetActive(true);
+            maximum.gameObject.SetActive(true);
+        }
     }
     private void checkStory()
     {

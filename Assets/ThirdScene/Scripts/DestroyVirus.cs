@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyVirus : MonoBehaviour
 {
-    [SerializeField] private Camera cam;
+    [SerializeField] private GameObject cam;
     [SerializeField] private RingColorChange ring;
 
     private float duration = 0.2f;

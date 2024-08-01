@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.LegacyInputHelpers;
 
 public class cshGameManager_S2 : MonoBehaviour
 {
@@ -12,9 +13,11 @@ public class cshGameManager_S2 : MonoBehaviour
     public TextMeshProUGUI countingText;
     public GameObject OriginCanvas;
     public GameObject FinishCanvas;
+    public GameObject rayModel;
 
     void Start()
     {
+        rayModel.SetActive(false); 
         countVirus = 0;
         StartCoroutine(SpawnVirus());
     }

@@ -610,7 +610,7 @@ MonoBehaviour:
   images:
   - {fileID: 21300000, guid: 268578732fe9cbd42aa773cd4d9d9ee7, type: 3}
   - {fileID: 21300000, guid: 79c2c251a1fcf1c4d97a6cc384149fd6, type: 3}
-  - {fileID: 21300000, guid: 1dd2d9dd0fe212c45bcbaabcf363b00b, type: 3}
+  - {fileID: 21300000, guid: 69114b92319f4714082fb490d196ec34, type: 3}
   - {fileID: 21300000, guid: fa3a57702613bc04781d71c8d087252d, type: 3}
 --- !u!114 &87525560
 MonoBehaviour:
@@ -809,7 +809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58ceb6db48426d459dd5dc94a20a5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 495412175}
+  cam: {fileID: 2077194577}
   ring: {fileID: 1001196646}
 --- !u!1 &107515044
 GameObject:
