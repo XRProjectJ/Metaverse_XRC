@@ -95,11 +95,7 @@ public class Story_First1 : MonoBehaviour
             // WaitUntile 은 true 가 될때 코드 실행을 재개
             yield return new WaitUntil(() => { return lamdaCondition; });
             lamdaCondition = false;
-            if (first)
-            {
-                picture.gameObject.SetActive(false);
-                shouldInvisible.SetActive(false);
-            }
+
             
         }
         Debug.Log("Read Story");
@@ -107,8 +103,9 @@ public class Story_First1 : MonoBehaviour
         changeFInal();
 
         story.Clear();
+        picture.gameObject.SetActive(false);
+        shouldInvisible.SetActive(false);
 
-        
     }
     private void checkStory()
     {
