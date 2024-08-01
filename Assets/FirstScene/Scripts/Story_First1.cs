@@ -9,13 +9,14 @@ public class Story_First1 : MonoBehaviour
 {
     [SerializeField] private Text txtStory;
     [SerializeField] private Button btnNext;
+    [SerializeField] public Button btnFinal;
     [SerializeField] private GameObject shouldInvisible;
     [SerializeField] private Image picture;
     [SerializeField] private Sprite[] images;
 
     private List<string> story = new List<string>();
-    private string txtPath = "Assets/FisrtScene/storyText_first.txt";
-    private string finalTxtPath = "Assets/FisrtScene/storyText_first.txt";
+    private string txtPath = "Assets/FirstScene/storyText_first.txt";
+    private string finalTxtPath = "Assets/FirstScene/storyText_first.txt";
     private bool lamdaCondition = false;
     private bool finalAchievement = false;
 
@@ -26,8 +27,19 @@ public class Story_First1 : MonoBehaviour
         btnNext.onClick.AddListener(checkStory);
         ReadFile(txtPath);
         StartCoroutine(ReadStory(true));
-        
+        btnNext.gameObject.SetActive(true);
+
         Debug.Log("Story Start");
+
+        if (btnFinal != null)
+        {
+            
+            btnFinal.gameObject.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("btnFinal is not assigned in the Inspector.");
+        }
     }
     // 텍스트 파일을 파일 위치로 읽어들이기
     private void ReadFile(string path)
@@ -91,12 +103,36 @@ public class Story_First1 : MonoBehaviour
             
         }
         Debug.Log("Read Story");
-        
+
+        changeFInal();
+
         story.Clear();
+
+        
     }
     private void checkStory()
     {
         lamdaCondition=true;
     }
 
+    void changeFInal()
+    {
+        if (btnFinal != null)
+        {
+            btnFinal.gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("btnFinal is not assigned in the Inspector.");
+        }
+
+        if (btnNext != null)
+        {
+            btnNext.gameObject.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("btnNext is not assigned in the Inspector.");
+        }
+    }
 }
