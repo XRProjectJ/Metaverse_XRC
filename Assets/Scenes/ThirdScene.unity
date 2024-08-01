@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05724723, g: 0.016530195, b: 0.021963079, a: 1}
+  m_IndirectSpecularColor: {r: 0.0570253, g: 0.016472798, b: 0.021975756, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -605,7 +605,6 @@ MonoBehaviour:
   spawnVirus: {fileID: 323077728}
   shouldInvisible: {fileID: 1150958754}
   finalText: {fileID: 359016107}
-  sceneChanger: {fileID: 359016107}
   maximum: {fileID: 1140061259}
   picture: {fileID: 1724215699}
   images:
@@ -2451,7 +2450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationPos: {fileID: 1591109197}
   spawnPosCollection: {fileID: 323077728}
-  virus: {fileID: 7662646678959171231, guid: f6fdfe88dffe0e549961b537a85c1144, type: 3}
+  virus: {fileID: 5996517455393898657, guid: ebd45447484328b458216bf3eeeabb95, type: 3}
 --- !u!1 &326309200
 GameObject:
   m_ObjectHideFlags: 0
@@ -4602,7 +4601,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 01a75ec0a5d24914b9d43adbfc39d02a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.13
+      value: 0.156
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01a75ec0a5d24914b9d43adbfc39d02a,
         type: 3}
@@ -26201,17 +26200,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8dccb349497597e47922680b1c840bef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.25
+      value: 0.156
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dccb349497597e47922680b1c840bef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dccb349497597e47922680b1c840bef,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.65
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dccb349497597e47922680b1c840bef,
         type: 3}
