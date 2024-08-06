@@ -1,21 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using Unity.VisualScripting;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
 public class cshStory : MonoBehaviour
-{
+{ 
     [SerializeField] private Text txtStory;
     [SerializeField] private Button btnNext;
     
     [SerializeField] private GameObject shouldInvisible;
     [SerializeField] private Image picture;
-    [SerializeField] private Sprite[] images;
+    [SerializeField] private string[] imageNames;
 
     public GameObject antiSpere;
     public GameObject GameManager;
@@ -24,7 +22,7 @@ public class cshStory : MonoBehaviour
     public OVRPlayerController playerController;
 
     private List<string> story = new List<string>();
-    public string txtPath = "Assets/KJS/AntibodyText.txt";
+    public string fileName;
     private bool lamdaCondition = false;
 
     // Start is called before the first frame update
@@ -33,31 +31,25 @@ public class cshStory : MonoBehaviour
         picture.gameObject.SetActive(false);
         btnNext.onClick.RemoveAllListeners();
         btnNext.onClick.AddListener(checkStory);
-        ReadFile(txtPath);
+        ReadFile(fileName); // edit
         StartCoroutine(ReadStory());
         Debug.Log("Story Start");
     }
-    // 텍스트 파일을 파일 위치로 읽어들이기
-    private void ReadFile(string path)
+    // 텍스트 파일을 Resources 폴더에서 읽어들이기
+    private void ReadFile(string fileName)
     {
-        try
+        TextAsset textAsset = Resources.Load<TextAsset>(fileName); // edit
+        if (textAsset != null)
         {
-            if (File.Exists(path))
+            string[] storyLines = textAsset.text.Split('\n');
+            for (int i = 0; i < storyLines.Length; i++)
             {
-                string[] storyLines = File.ReadAllLines(path);
-                for (int i = 0; i < storyLines.Length; i++)
-                {
-                    story.Add(storyLines[i]);
-                }
-            }
-            else
-            {
-                Debug.Log("파일 읽기 실패");
+                story.Add(storyLines[i]);
             }
         }
-        catch (IOException e)
+        else
         {
-            Debug.LogError(e.Message);
+            Debug.Log("파일 읽기 실패");
         }
     }
     private IEnumerator ReadStory()
@@ -74,35 +66,43 @@ public class cshStory : MonoBehaviour
                 {
                     break;
                 }
-                if (story[i][story[i].Length-1] == '@')
+                if (story[i].Trim().EndsWith("@"))
                 {
                     picture.gameObject.SetActive(true);
-                    picture.sprite = images[imgIdx++];
+                    picture.sprite = Resources.Load<Sprite>(imageNames[imgIdx++]);
                     Debug.Log("imagesIdx = " + imgIdx);
+                    tmp += story[i].Substring(0, story[i].LastIndexOf('@')) + "\n";
                 }
-                if (story[i][story[i].Length - 1] == '#')
+                else if (story[i].Trim().EndsWith("#"))
                 {
                     antiSpere.SetActive(true);
                     controllerModel.SetActive(false);
+                    tmp += story[i].Substring(0, story[i].LastIndexOf('#')) + "\n";
                 }
-                if (story[i][story[i].Length - 1] == '$')
+                else if(story[i].Trim().EndsWith("$"))
                 {
                     GameManager.SetActive(true);
                     playerController.enabled = true;
+                    tmp += story[i].Substring(0, story[i].LastIndexOf('$')) + "\n";
                     goto ExitLoops;
                 }
-                if (story[i][story[i].Length - 1] == '&')
+                else if(story[i].Trim().EndsWith("&"))
                 {
                     antiSpere.SetActive(false);
                     playerController.enabled = false;
                     controllerModel.SetActive(true);
                     rayModel.SetActive(true);
+                    tmp += story[i].Substring(0, story[i].LastIndexOf('&')) + "\n";
                 }
-                if (story[i][story[i].Length - 1] == '%')
+                else if(story[i].Trim().EndsWith("%"))
                 {
+                    tmp += story[i].Substring(0, story[i].LastIndexOf('%')) + "\n";
                     SceneManager.LoadScene("ThirdScene");
                 }
-                tmp += story[i].TrimEnd('@').TrimEnd('#').TrimEnd('$').TrimEnd('&').TrimEnd('%') + "\n";
+                else
+                {
+                    tmp += story[i] + "\n";
+                }
                 i++;
             }
             Debug.Log(tmp);

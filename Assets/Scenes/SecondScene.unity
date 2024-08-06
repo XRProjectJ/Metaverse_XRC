@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0570253, g: 0.016472798, b: 0.021975756, a: 1}
+  m_IndirectSpecularColor: {r: 0.057049282, g: 0.016478548, b: 0.021977877, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5312,19 +5312,19 @@ MonoBehaviour:
   btnNext: {fileID: 99583320}
   shouldInvisible: {fileID: 1642774641}
   picture: {fileID: 1513062362}
-  images:
-  - {fileID: 21300000, guid: 9feebaddec5e91a448b9d4f4635ee68d, type: 3}
-  - {fileID: 21300000, guid: 191b027666389c940880c3d002b0236e, type: 3}
-  - {fileID: 21300000, guid: a4c974ffa291b00438d0d4610a0135ca, type: 3}
-  - {fileID: 21300000, guid: acdf772240534674987a5eb56f4eb88a, type: 3}
-  - {fileID: 21300000, guid: 6d12d6d32ab8e064780463a2020d0502, type: 3}
-  - {fileID: 21300000, guid: 368687fac89ca234d8a8eda8cbb354e4, type: 3}
+  imageNames:
+  - "\uBC31\uD608\uAD6C 3\uC885\uB958 \uBAA8\uC74C_\uCD9C\uCC98\uC81C\uAC70"
+  - "\uC0AC\uC774\uD1A0\uCE74\uC778 \uBD84\uBE44"
+  - "\uB9BC\uD504\uAD6C\uC758 \uD65C\uC131\uD654"
+  - "\uC5D0\uD53C\uD1A0\uD504"
+  - virus1
+  - virus2
   antiSpere: {fileID: 877967471}
   GameManager: {fileID: 960094429}
   controllerModel: {fileID: 163203350}
   rayModel: {fileID: 1968447155}
   playerController: {fileID: 1346781915}
-  txtPath: Assets/KJS/AntibodyText.txt
+  fileName: second_story_start
 --- !u!1 &685812455
 GameObject:
   m_ObjectHideFlags: 0
@@ -14103,13 +14103,13 @@ MonoBehaviour:
   btnNext: {fileID: 19102639}
   shouldInvisible: {fileID: 397262953}
   picture: {fileID: 418488727}
-  images: []
+  imageNames: []
   antiSpere: {fileID: 877967471}
   GameManager: {fileID: 960094429}
   controllerModel: {fileID: 163203350}
   rayModel: {fileID: 1968447155}
   playerController: {fileID: 1346781915}
-  txtPath: Assets/KJS/AntibodyFinishText.txt
+  fileName: second_story_finish
 --- !u!114 &1968451648
 MonoBehaviour:
   m_ObjectHideFlags: 0

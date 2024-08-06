@@ -14,11 +14,9 @@ public class Story : MonoBehaviour
     [SerializeField] private GameObject finalText;
     [SerializeField] private Text maximum;
     [SerializeField] private Image picture;
-    [SerializeField] private Sprite[] images;
+    [SerializeField] private string[] imageNames;
 
     private List<string> story = new List<string>();
-    private string txtPath = "Assets/ThirdScene/storyText.txt";
-    private string finalTxtPath = "Assets/ThirdScene/finalStoryText.txt";
     private bool lamdaCondition = false;
     private bool finalAchievement = false;
 
@@ -51,32 +49,26 @@ public class Story : MonoBehaviour
         picture.gameObject.SetActive(false);
         btnNext.onClick.RemoveAllListeners();
         btnNext.onClick.AddListener(checkStory);
-        ReadFile(txtPath);
+        ReadFile("third_story_start"); // edit
         StartCoroutine(ReadStory(true));
         
         Debug.Log("Story Start");
     }
-    // 텍스트 파일을 파일 위치로 읽어들이기
-    private void ReadFile(string path)
+    // 텍스트 파일을 Resources 폴더에서 읽어들이기
+    private void ReadFile(string fileName) // edit
     {
-        try
+        TextAsset textAsset = Resources.Load<TextAsset>(fileName);
+        if (textAsset != null)
         {
-            if (File.Exists(path))
+            string[] storyLines = textAsset.text.Split('\n');
+            for (int i = 0; i < storyLines.Length; i++)
             {
-                string[] storyLines = File.ReadAllLines(path);
-                for (int i = 0; i < storyLines.Length; i++)
-                {
-                    story.Add(storyLines[i]);
-                }
-            }
-            else
-            {
-                Debug.Log("파일 읽기 실패");
+                story.Add(storyLines[i]);
             }
         }
-        catch (IOException e)
+        else
         {
-            Debug.LogError(e.Message);
+            Debug.Log("파일 읽기 실패");
         }
     }
     private IEnumerator ReadStory(bool first)
@@ -93,13 +85,17 @@ public class Story : MonoBehaviour
                 {
                     break;
                 }
-                if (story[i][story[i].Length-1] == '@')
+                if (story[i].Trim().EndsWith("@")) // edit
                 {
                     picture.gameObject.SetActive(true);
-                    picture.sprite = images[imgIdx++];
+                    picture.sprite = Resources.Load<Sprite>(imageNames[imgIdx++]); //edit
                     Debug.Log("imagesIdx = " + imgIdx);
+                    tmp += story[i].Substring(0, story[i].LastIndexOf('@')) + "\n";
                 }
-                tmp += story[i].TrimEnd('@') + "\n";
+                else
+                {
+                    tmp += story[i] + "\n";
+                }
                 i++;
             }
             Debug.Log(tmp);

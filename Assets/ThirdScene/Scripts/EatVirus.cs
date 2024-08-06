@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class EatVirus : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI countingText;
-    [SerializeField] private GameObject deadEffect;
+    [SerializeField] private string deadEffectName; //EnergyExplosion.prefab
     [SerializeField] private RingColorChange ring;
     [SerializeField] private GameObject belowJaw;
     [SerializeField] private GameObject overJaw;
@@ -61,7 +61,7 @@ public class EatVirus : MonoBehaviour
             for (int i = eatableVirus.Count-1; i >= 0; i--)
             {
                 GameObject obj = eatableVirus[i];
-                GameObject particle = Instantiate(deadEffect);
+                GameObject particle = Instantiate(Resources.Load<GameObject>(deadEffectName));
                 particle.transform.position = obj.transform.position;
                 Destroy(particle, 0.5f);
                 eatableVirus.RemoveAt(i);
